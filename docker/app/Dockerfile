@@ -17,8 +17,8 @@ curl \
 gnupg \
 && docker-php-ext-install pdo_mysql
 
-COPY --from=node:10.22 /usr/local/bin /usr/local/bin
-COPY --from=node:10.22 /usr/local/lib /usr/local/lib
+COPY --from=node:latest /usr/local/bin /usr/local/bin
+COPY --from=node:latest /usr/local/lib /usr/local/lib
 
 RUN mv /etc/apache2/mods-available/rewrite.load /etc/apache2/mods-enabled
 RUN /bin/sh -c a2enmod rewrite
