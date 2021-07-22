@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import {
     BrowserRouter,
     Switch,
@@ -8,8 +8,17 @@ import {
 import TaskPage from "./pages/tasks";
 import HelpPage from "./pages/help";
 import LoginPage from "./pages/login";
+import axios from "axios";
 
 const Router = () => {
+    useEffect(() => {
+        axios.post('/api/login', {
+            email: 'admin@example.com',
+            password: 'password'
+        }).then(response => {
+            console.log(response)
+        })
+    }, [])
     return (
         <BrowserRouter>
             <div>
