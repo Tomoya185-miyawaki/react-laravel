@@ -5,5 +5,8 @@
         "jsx": "react",
         "strict": true,
         "esModuleInterop": true
-    }
+    },
+    "include": [
+        "resources/ts/*" // TypeScriptのソース配置場所
+    ]
 }
